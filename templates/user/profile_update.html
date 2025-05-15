@@ -1,0 +1,43 @@
+{% extends 'partials/base.html' %}
+{% block title %}Профайл Шинэчлэх{% endblock %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+    <!--Table-->
+    <div class="container">
+        <div class="row my-4">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        Профайл хуудас
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <span class="h4"> Профайл мэдээлэл </span> 
+                                <hr>
+                                <form method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {{ user_form|crispy }}
+                                    {{ profile_form|crispy }}
+                                    <button type="submit" class="btn btn-primary">Шинэчлэх</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!--End Table-->
+{% endblock %}

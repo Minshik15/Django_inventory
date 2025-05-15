@@ -1,0 +1,23 @@
+{% extends  'partials/base.html' %}
+{% block title %} Устгах пэйж {% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6 offset-md-3">
+            <div class="border bg-white p-3">
+                <h4>Бүтээгдэхүүн устгах</h4>
+                <hr>
+                <div class = "alert alert-danger">
+                    <h4>Та үнэхээр устгах уу?</h4>
+                </div>
+                <form method="POST">
+                    {{ form }}
+                    {% csrf_token %}
+                    <a class="btn btn-secondary" href="{% url 'dashboard-product' %}"">Цуцлах</a>
+                    <input type="submit" value="Устгах" class="btn btn-danger ">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
